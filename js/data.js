@@ -1,4 +1,4 @@
-const getRandomNumber = (from, to) => Math.round(Math.random() * (to - from) + from);
+import {getRandomNumber} from './utils.js';
 
 const getNewPhoto = (id) => ({
   id: id,
@@ -15,4 +15,5 @@ const getPhotosArray = (numberOfPhotos) => {
   }
   return result;
 };
-getPhotosArray(25);
+
+export {getPhotosArray};
