@@ -1,5 +1,21 @@
 const getRandomNumber = (from, to) => Math.round(Math.random() * (to - from) + from);
-const getStringLength = (strToCheck, maxLength) => strToCheck.length <= maxLength;
-getRandomNumber(4, 6);
-getStringLength('Кеке', 4);
-getStringLength('Кек', 2);
+const getStringLength = (string, maxLength) => string.length <= maxLength;
+
+const getNewPhoto = (id) => ({
+  id: id,
+  url: `photos/${id}.jpg`,
+  description: 'Hello there, this is my photo',
+  likes: getRandomNumber(15, 200),
+  comments: getRandomNumber(0, 200)
+});
+
+const getPhotosArray = (numberOfPhotos) => {
+  const result = [];
+  for (let i = 1; i <= numberOfPhotos; i++) {
+    result.push(getNewPhoto(i));
+  }
+  return result;
+};
+
+getStringLength('хай', 4);
+getPhotosArray(25);
