@@ -1,6 +1,6 @@
 import {getRandomNumber} from './utils.js';
 
-const getNewPhoto = (id) => ({
+const generateNewPhoto = (id) => ({
   id: id,
   url: `photos/${id}.jpg`,
   description: 'Hello there, this is my photo',
@@ -8,12 +8,12 @@ const getNewPhoto = (id) => ({
   comments: getRandomNumber(0, 200)
 });
 
-const getPhotosArray = (numberOfPhotos) => {
+const generatePhotosArray = (numberOfPhotos) => {
   const result = [];
   for (let i = 1; i <= numberOfPhotos; i++) {
-    result.push(getNewPhoto(i));
+    result.push(generateNewPhoto(i));
   }
   return result;
 };
 
-export {getPhotosArray};
+export {generatePhotosArray};
