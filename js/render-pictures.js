@@ -11,5 +11,5 @@ const renderPictures = (usersPhotos) => {
     picturesContainer.appendChild(renderedElement);
   });
 };
-
+//Задание 7 часть 2
 export {renderPictures};
