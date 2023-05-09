@@ -1,4 +1,5 @@
 import { generatePhotosArray } from './data.js';
 import { renderPictures } from './render-pictures.js';
+import { PHOTOS_NUMBER } from './utils.js';
 
-renderPictures(generatePhotosArray(12));
+renderPictures(generatePhotosArray(PHOTOS_NUMBER));

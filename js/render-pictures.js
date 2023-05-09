@@ -1,6 +1,6 @@
 const renderPictures = (usersPhotos) => {
-  const pictureTemplate = document.querySelector('#picture').content;
-  const picture = pictureTemplate.querySelector('.picture');
+  const picture = document.querySelector('#picture').content
+    .querySelector('.picture');
   const picturesContainer = document.querySelector('.pictures');
 
   usersPhotos.forEach((userPhoto) => {
@@ -11,5 +11,5 @@ const renderPictures = (usersPhotos) => {
     picturesContainer.appendChild(renderedElement);
   });
 };
-
+//Задание 7 часть 2
 export {renderPictures};
