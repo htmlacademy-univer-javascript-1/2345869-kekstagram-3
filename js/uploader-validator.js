@@ -7,14 +7,6 @@ const pristine = new Pristine(uploaderOverlay, {
   errorTextParent: 'img-upload__field-wrapper',
   errorTextTag: 'div',
   errorTextClass: 'form__error',
-});
-
-const validateComment = (value) => value.length >= 20 && value.length <= 140;
-
-pristine.addValidator(
-  uploaderOverlay.querySelector('.text__description'),
-  validateComment,
-  'От 20 до 140 символов'
-);
+}, true);
 
 export {pristine};
