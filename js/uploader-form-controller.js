@@ -1,19 +1,22 @@
+import { clearEffects } from './uploader-effects.js';
+import { resetScale } from './uploader-scale-controller.js';
 import { pristine } from './uploader-validator.js';
 
 const uploaderOverlay = document.querySelector('.img-upload__form');
 const uploaderElement = uploaderOverlay.querySelector('#upload-file');
 const editor = uploaderOverlay.querySelector('.img-upload__overlay');
-const closeButton = uploaderOverlay.querySelector('.img-upload__cancel');
+const exitButton = uploaderOverlay.querySelector('.img-upload__cancel');
 
 const closeEditor = () => {
   editor.classList.add('hidden');
   document.body.classList.remove('modal-open');
 
   uploaderOverlay.reset();
+  resetScale();
+  clearEffects();
 };
 
-const addListeners = () => {
-
+const addUploaderListeners = () => {
   uploaderElement.addEventListener('change', () => {
     editor.classList.remove('hidden');
     document.body.classList.add('modal-open');
@@ -25,7 +28,7 @@ const addListeners = () => {
     }
   });
 
-  closeButton.addEventListener('click', () => {
+  exitButton.addEventListener('click', () => {
     closeEditor();
   });
 
@@ -40,4 +43,4 @@ const addListeners = () => {
 };
 
 
-export {addListeners};
+export {addUploaderListeners};
